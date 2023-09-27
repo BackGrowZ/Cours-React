@@ -1,8 +1,4 @@
-Bien sûr, voici un cours complet sur l'introduction à JSX en React, avec les noms de dossiers et de fichiers inclus.
-
----
-
-# Cours sur l'Introduction à JSX en React
+# Introduction à JSX en React
 
 ## Introduction
 

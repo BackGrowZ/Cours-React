@@ -1,4 +1,4 @@
-# Cours sur l'utilisation des Attributs en JSX
+# Les attributs en JSX
 
 ## Introduction
 

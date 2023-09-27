@@ -1,8 +1,4 @@
-Bien sûr, voici un cours complet sur la mise en place de l'environnement de développement avec Vite.js, avec les noms de dossiers et de fichiers inclus.
-
----
-
-# Cours sur la Mise en Place de l'Environnement de Développement avec Vite.js
+# Mise en place de l'environnement de développement avec Vite.js
 
 ## Introduction
 

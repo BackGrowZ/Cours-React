@@ -1,4 +1,4 @@
-# Cours sur les Composants Fonctionnels en React
+# Les composants fonctionnels en React
 
 ## Introduction
 
