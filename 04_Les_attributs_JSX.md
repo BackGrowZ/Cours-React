@@ -12,7 +12,8 @@ JSX (JavaScript XML) est une extension de JavaScript largement utilisée dans Re
 4. [Attributs spécifiques à React](#attributs-spécifiques-à-react)
 5. [Passer des valeurs aux attributs](#passer-des-valeurs-aux-attributs)
 6. [Attributs de style en JSX](#attributs-de-style-en-jsx)
-7. [Conclusion](#conclusion)
+7. [Dépannage et erreurs courantes](#dépannage-et-erreurs-courantes)
+8. [Conclusion](#conclusion)
 
 ## 1. Attributs en JSX
 
@@ -77,6 +78,19 @@ const texte = "Ceci est un texte dynamique.";
 <p>{texte}</p>
 ```
 
+### Utilisation d'expressions JavaScript complexes
+
+Vous pouvez également utiliser des expressions JavaScript plus complexes pour définir les valeurs des attributs. Par exemple :
+
+```jsx
+const user = {
+  firstName: "John",
+  lastName: "Doe",
+};
+
+<p>Bienvenue, {user.firstName + " " + user.lastName} !</p>
+```
+
 ## 6. Attributs de style en JSX
 
 Pour définir des styles CSS en JSX, vous utilisez l'attribut `style`. Cependant, les noms des propriétés CSS en JSX sont écrits en camelCase plutôt qu'en kebab-case comme en HTML.
@@ -93,10 +107,62 @@ const stylePersonnalise = {
 <div style={stylePersonnalise}>Contenu stylisé</div>;
 ```
 
-## 7. Conclusion
+## 7. Dépannage et erreurs courantes
+
+Lors de l'utilisation des attributs en JSX, vous pouvez rencontrer certaines erreurs courantes. Voici quelques-unes des plus fréquentes et comment les résoudre :
+
+### Problème : Attribut invalide
+
+**Solution** : Assurez-vous que les attributs utilisés sont valides en JSX et respectent la syntaxe camelCase pour les styles et les attributs spécifiques à React.
+
+```jsx
+// Incorrect
+<div class="maClasse">Contenu</div>
+
+// Correct
+<div className="maClasse">Contenu</div>
+```
+
+### Problème : Valeur dynamique incorrecte
+
+**Solution** : Vérifiez que les valeurs dynamiques passées aux attributs sont correctement définies et que les variables ou expressions utilisées existent et sont accessibles.
+
+```jsx
+// Incorrect
+<img src={imageURL} alt="Image" />
+
+// Correct
+const imageURL = "https://example.com/image.png";
+<img src={imageURL} alt="Image" />
+```
+
+### Problème : Syntaxe incorrecte pour les styles
+
+**Solution** : Utilisez la syntaxe camelCase pour les propriétés de style et assurez-vous que les valeurs sont correctement définies.
+
+```jsx
+// Incorrect
+<div style={{ "background-color": "blue" }}>Contenu stylisé</div>
+
+// Correct
+<div style={{ backgroundColor: "blue" }}>Contenu stylisé</div>
+```
+
+### Outils de débogage
+
+1. **Console du navigateur** : Utilisez la console pour afficher les erreurs et les avertissements liés aux attributs en JSX.
+2. **React Developer Tools** : Les outils de développement React pour Chrome ou Firefox peuvent aider à inspecter les composants et leurs props.
+
+## 8. Conclusion
 
 Les attributs en JSX sont essentiels pour personnaliser et contrôler le comportement des éléments dans vos composants React. En comprenant comment utiliser correctement les attributs standard, comment écrire en camelCase, comment gérer les attributs spécifiques à React, comment passer des valeurs dynamiques et comment définir des attributs de style en JSX, vous serez en mesure de créer des composants React flexibles et personnalisables.
 
-La maîtrise des attributs en JSX est un élément clé de la création d'interfaces utilisateur réactives et dynamiques. Pratiquez et explorez davantage pour devenir un développeur React plus compétent.
+### Ressources supplémentaires
+
+Pour en savoir plus sur les attributs en JSX et explorer les fonctionnalités avancées, consultez les ressources suivantes :
+- [Documentation officielle de React](https://reactjs.org/docs/introducing-jsx.html)
+- [Guide sur les attributs en JSX de MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 
 C'est la fin de ce cours sur l'utilisation des attributs en JSX. J'espère que cela vous a aidé à comprendre comment utiliser les attributs pour créer des composants React puissants et personnalisables.
+
+---
