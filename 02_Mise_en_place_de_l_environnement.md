@@ -13,7 +13,9 @@ Vite.js est un outil de développement léger et rapide pour la création d'appl
 5. [Exécution du Projet](#exécution-du-projet)
 6. [Gestion des Dépendances](#gestion-des-dépendances)
 7. [Configuration Personnalisée](#configuration-personnalisée)
-8. [Conclusion](#conclusion)
+8. [Dépannage et erreurs courantes](#dépannage-et-erreurs-courantes)
+9. [Documentation complémentaire](#documentation-complémentaire)
+10. [Conclusion](#conclusion)
 
 ## 1. Introduction à Vite.js
 
@@ -83,15 +85,86 @@ Vite.js gère automatiquement les dépendances et les importations dans votre co
 
 Si vous avez besoin de personnaliser la configuration de Vite, vous pouvez le faire en modifiant le fichier `vite.config.js`. Vous pouvez configurer des plugins, des alias, des options de compilation, et bien plus encore.
 
+### Exemple de configuration personnalisée
+
+Voici un exemple de configuration personnalisée pour Vite.js :
+
 ```js
-// Exemple de configuration personnalisée
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': '/src',
+    },
+  },
+  server: {
+    port: 3000,
+    open: true,
+  },
+});
+```
+
+Dans cet exemple, nous avons ajouté le plugin React, défini un alias pour le dossier `src`, et configuré le serveur de développement pour s'ouvrir automatiquement sur le port 3000.
+
+### Plugins utiles
+
+Vous pouvez étendre les fonctionnalités de Vite en utilisant des plugins. Voici quelques plugins couramment utilisés :
+
+- `@vitejs/plugin-vue` : Pour les projets Vue.js.
+- `vite-plugin-eslint` : Pour l'intégration de ESLint.
+- `vite-plugin-svgr` : Pour importer des fichiers SVG comme des composants React.
+
+Pour ajouter un plugin, installez-le via npm et ajoutez-le à la section `plugins` de votre `vite.config.js`.
+
+## 8. Dépannage et erreurs courantes
+
+Lors de l'utilisation de Vite.js, vous pouvez rencontrer certaines erreurs courantes. Voici quelques-unes des plus fréquentes et comment les résoudre :
+
+### Problème : Erreur "command not found: create-vite"
+
+**Solution** : Assurez-vous que vous avez installé Vite globalement avec `npm install -g create-vite`. Si le problème persiste, essayez d'ajouter le chemin npm global à votre PATH.
+
+### Problème : Port déjà en use
+
+**Solution** : Si le port par défaut (3000) est déjà utilisé, vous pouvez changer le port dans la configuration de Vite.
+
+```js
+// vite.config.js
 export default {
-  // Configuration personnalisée ici
+  server: {
+    port: 4000,
+  },
 };
 ```
 
-## 8. Conclusion
+### Problème : Dépendance non trouvée
+
+**Solution** : Assurez-vous que toutes les dépendances sont correctement installées en exécutant `npm install` ou `yarn install`. Si le problème persiste, vérifiez le chemin d'importation des modules.
+
+### Problème : Erreurs de compilation
+
+**Solution** : Vérifiez les messages d'erreur pour des indications sur ce qui ne va pas. Parfois, des erreurs de syntaxe ou des problèmes de compatibilité de version peuvent causer des échecs de compilation.
+
+### Outils de débogage
+
+1. **Console du navigateur** : Utilisez la console pour afficher les erreurs et les avertissements.
+2. **Outils de développement React** : Les outils de développement React pour Chrome ou Firefox peuvent aider à inspecter l'état et les props des composants React.
+
+## 9. Documentation complémentaire
+
+Pour en savoir plus sur Vite.js et explorer ses fonctionnalités avancées, consultez la documentation officielle :
+
+- [Documentation Vite.js](https://vitejs.dev/guide/)
+- [Documentation React](https://reactjs.org/docs/getting-started.html)
+- [Documentation Node.js](https://nodejs.org/en/docs/)
+
+## 10. Conclusion
 
 Vite.js est un outil de développement web rapide et puissant qui facilite la création d'applications modernes en JavaScript et TypeScript. En suivant ce guide, vous avez appris à mettre en place un environnement de développement avec Vite.js et à commencer à créer des projets web performants.
 
 C'est la fin de ce cours sur la mise en place de l'environnement de développement avec Vite.js. J'espère que vous êtes maintenant prêt à explorer davantage Vite.js et à créer des applications web exceptionnelles.
+
+---
