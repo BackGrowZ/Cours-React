@@ -98,4 +98,6 @@ Cette erreur se produit généralement lorsque le processus de construction de v
 
 ## 6. Conclusion
 
-Le déploiement et la mise en production d'applications React sont des étapes cruciales pour garantir que votre application est optimisée, sécurisée et accessible à vos utilisateurs. En suivant les meilleures pratiques de configuration, de gestion des environnements et de déploiement, vous pouvez assurer la stabilité et la performance de votre application en production.
+Le déploiement et la mise en production d'applications React sont des étapes cruciales pour garantir que votre application est optimisée
+
+, sécurisée et accessible à vos utilisateurs. En suivant les meilleures pratiques de configuration, de gestion des environnements et de déploiement, vous pouvez assurer la stabilité et la performance de votre application en production.
